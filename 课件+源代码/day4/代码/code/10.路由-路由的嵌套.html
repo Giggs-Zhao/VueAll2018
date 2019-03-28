@@ -12,39 +12,22 @@
 
 <body>
   <div id="app">
-
     <router-link to="/account">Account</router-link>
-
     <router-view></router-view>
-
   </div>
-
   <template id="tmpl">
     <div>
       <h1>这是 Account 组件</h1>
-
       <router-link to="/account/login">登录</router-link>
       <router-link to="/account/register">注册</router-link>
-
       <router-view></router-view>
     </div>
   </template>
-
   <script>
-
     // 组件的模板对象
-    var account = {
-      template: '#tmpl'
-    }
-
-    var login = {
-      template: '<h3>登录</h3>'
-    }
-
-    var register = {
-      template: '<h3>注册</h3>'
-    }
-
+    var account = { template: '#tmpl' }
+    var login = { template: '<h3>登录</h3>' }
+    var register = { template: '<h3>注册</h3>' }
     var router = new VueRouter({
       routes: [
         {
@@ -53,9 +36,9 @@
           // 使用 children 属性，实现子路由，同时，子路由的 path 前面，不要带 / ，否则永远以根路径开始请求，这样不方便我们用户去理解URL地址
           children: [
             { path: 'login', component: login },
-            { path: 'register', component: register }
-          ]
+            { path: 'register', component: register }]
         }
+        // 如果这样写，点击登录或注册后，页面不再显示tmpl组件，所以不可以这样写
         // { path: '/account/login', component: login },
         // { path: '/account/register', component: register }
       ]
