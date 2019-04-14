@@ -24,7 +24,7 @@
     </div>
   </template>
   <script>
-    // 组件的模板对象
+    //组件的模板对象
     var account = { template: '#tmpl' }
     var login = { template: '<h3>登录</h3>' }
     var register = { template: '<h3>注册</h3>' }
@@ -33,18 +33,18 @@
         {
           path: '/account',
           component: account,
-          // 使用 children 属性，实现子路由，同时，子路由的 path 前面，不要带 / ，否则永远以根路径开始请求，这样不方便我们用户去理解URL地址
+          //使用children属性，实现子路由，同时，子路由的path前面，不要带/，否则永远以根路径开始请求，这样不方便我们用户去理解URL地址
           children: [
             { path: 'login', component: login },
             { path: 'register', component: register }]
         }
-        // 如果这样写，点击登录或注册后，页面不再显示tmpl组件，所以不可以这样写
-        // { path: '/account/login', component: login },
-        // { path: '/account/register', component: register }
+        //如果这样写，点击登录或注册后，页面不再显示tmpl组件，所以不可以这样写
+        //{path:'/account/login',component:login},
+        //{path:'/account/register',component:register}
       ]
     })
 
-    // 创建 Vue 实例，得到 ViewModel
+    //创建Vue实例，得到ViewModel
     var vm = new Vue({
       el: '#app',
       data: {},
