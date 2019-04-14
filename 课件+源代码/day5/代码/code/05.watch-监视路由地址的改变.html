@@ -7,32 +7,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./lib/vue-2.4.0.js"></script>
-  <!-- 1. 导入包 -->
+  <!--1.导入包-->
   <script src="./lib/vue-router-3.0.1.js"></script>
 </head>
 <body>
   <div id="app">
     <router-link to="/login">登录</router-link>
     <router-link to="/register">注册</router-link>
-    <!-- 容器 -->
+    <!--容器-->
     <router-view></router-view>
   </div>
   <script>
-    // 2. 创建子组件
+    //2.创建子组件
     var login = {template: '<h3>这是登录子组件，这个组件是 奔波霸 开发的。</h3>' }
     var register = {template: '<h3>这是注册子组件，这个组件是 霸波奔 开发的。</h3>'}
-    // 3. 创建一个路由对象
+    //3.创建一个路由对象
     var router = new VueRouter({
-      routes: [ // 路由规则数组
+      routes: [ //路由规则数组
       { path: '/', redirect: '/login' },{ path: '/login', component: login },{ path: '/register', component: register }],
-      linkActiveClass: 'myactive' // 和激活相关的类
+      linkActiveClass: 'myactive' //和激活相关的类
     })
-    // 创建 Vue 实例，得到 ViewModel
+    //创建Vue实例，得到ViewModel
     var vm = new Vue({
       el: '#app',
       data: {},
       methods: {},
-      // router: router
+      //router:router
       router,
       watch: {
         //这个也是能获得路由的新值和旧值
