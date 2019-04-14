@@ -12,7 +12,7 @@
   <style>
     .router-link-active,
     .myactive {
-      color: red;
+      color: red;如果在路由中
       font-weight: 800;
       font-style: italic;
       font-size: 80px;
@@ -25,7 +25,6 @@
       opacity: 0;
       transform: translateX(140px);
     }
-
     .v-enter-active,
     .v-leave-active {
       transition: all 0.5s ease;
@@ -36,16 +35,16 @@
 <body>
   <div id="app">
 
-    <!-- <a href="#/login">登录</a> -->
-    <!-- <a href="#/register">注册</a> -->
+     <a href="#/login">登录</a>
+     <a href="#/register">注册</a>
 
     <!-- router-link 默认渲染为一个a 标签 -->
     <router-link to="/login" tag="span">登录</router-link>
     <router-link to="/register">注册</router-link>
 
 
-    <!-- 这是 vue-router 提供的元素，专门用来 当作占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 -->
-    <!-- 所以： 我们可以把 router-view 认为是一个占位符 -->
+    <!--这是vue-router提供的元素，专门用来当作占位符的，将来，路由规则，匹配到的组件，就会展示到这个router-view中去-->
+    <!--所以：我们可以把router-view认为是一个占位符-->
     <transition mode="out-in">
       <router-view></router-view>
     </transition>
